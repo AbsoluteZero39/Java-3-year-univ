@@ -1,22 +1,29 @@
 package com.company;
 import static java.lang.System.out;
+
 public class Main {
 
     public static void main(String[] args) {
-	Interval interval1 = new Interval(20,30, true,false);
-        Interval arr[]=new Interval[4];
-        Interval arr2[]=new Interval[4];
-        arr[0]=new Interval(6,8, true,false);
-        arr[1]=new Interval(7,9, true,true);
-        arr[2]=new Interval(2,4,false, false);
-        arr[3]=new Interval(4,10,true,true);
+        Product product1 = new Product(1,"Carrot",10131324,"Farm",5,7,300);
+        product1.getname();
+        product1.setprice(6);
+        product1.getprice();
+        String word = new String();
+        word = Product.idtoString(product1);
+        Product p_array[] = new Product[8];
+        p_array[1] = new Product(2,"Potato",40231334,"Farm",3,30,50);
+        p_array[2] = new Product(3,"Carrot",30431324,"Factory",7,10,100);
+        p_array[3] = new Product(4,"Oil",51141324,"Factory",12,180,15);
+        p_array[0] = product1;
+        p_array[4] = new Product(5,"Carrot",30431324,"Space",100,3,5);
+        p_array[5] = new Product(6,"Carrot",30121324,"MLP",50,14,500);
+        p_array[6] = new Product(7,"Sugar",20434324,"Bricle Berry",7,10,1000);
+        p_array[7] = new Product(8,"Carrot",12435324,"USA",25,5,100);
+        Product.ForName(p_array,"Carrot");
+        out.println();
+        Product.ForName_underPrice(p_array,"Carrot",25);
+        out.println();
+        Product.more_days(p_array,15);
 
-        arr2[0]=new Interval(1,6, true,true);
-        arr2[1]=new Interval(2,8, true,false);
-        arr2[2]=new Interval(3,10,false, true);
-        arr2[3]=new Interval(5,8,true,true);
-        Interval.intervalIntersection(arr2);
-        Interval.intervalUnion(arr);
-        interval1.Furthest((arr));
     }
 }
